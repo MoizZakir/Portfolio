@@ -1,0 +1,110 @@
+.navbar{
+    display: flex;
+    position: sticky;
+    top: -5px;
+    background-color: bisque;
+    height:60px ;
+    justify-content: space-between;
+    background-color: transparent;
+    -webkit-backdrop-filter: blur(5px);
+     backdrop-filter: blur(5px);
+     box-shadow: 0px 20px 15px -3px rgba(0,0,0,0.1);
+}
+
+
+.menue ul{
+    display: flex;
+    color: rgb(125, 125, 125);
+    font-weight: 700;
+    
+    
+    list-style-type: none;
+ 
+
+
+}
+.menue ul li{
+    margin: 15px 15px;
+    font-size: 21px;
+    letter-spacing: 2px;
+    border-radius: 10px;
+    /* background-color: rgb(137, 63, 180);
+    padding: 10px 10px; */
+    cursor: pointer;
+    
+}
+.menue ul li::after{
+    
+    color: white;
+    position: absolute;
+    content: "";
+    display: flex;
+    background-color: rgb(125, 61, 228);
+    width: 0px;
+    height: 3px;
+    transition:width;
+}
+.menue ul li:hover::after{
+    transition-duration: 0.5s;
+    width: 60px;
+}
+
+.sidebar {
+    display: none;
+    min-height:99.3vh;
+    position: absolute;
+    left: 0px;
+    justify-content: space-between;
+    background-color: rgb(201, 200, 202);
+    width: 50vw;
+    top:60.3px;
+    animation: sidebardiv;
+    animation-duration: 0.5s;
+    border-top-right-radius: 40%;
+
+
+}
+
+.sidebar ul li{
+    margin: 5px 5px;
+    border-bottom: 0.5px solid gray;
+    color: black;
+    font-weight: 800;
+    
+}
+
+@keyframes sidebardiv {
+    from{
+        left: -300px;
+    }
+    to{
+        left: 0px;
+    }
+    
+}
+.sidebar ul{
+list-style-type: none;  
+display: flex;
+flex-direction:column;
+
+}
+.sidebar ul {
+    gap: 30px;
+    
+}
+h3{
+    margin:15px 1px;
+    font-size: 25px;
+    letter-spacing: 1px;
+    font-weight: 900;
+}
+.menueButton{
+    display: none;
+}
+@media (max-width:991px) {
+    .menueButton{display: flex;margin-right: 7px;margin-top: 5px;}
+    .menue{display: none;}
+    
+    
+    
+}
