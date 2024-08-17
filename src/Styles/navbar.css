@@ -1,20 +1,28 @@
 .navbar{
     display: flex;
     position: sticky;
+    width: 95vw;
+   
     top: -5px;
-    background-color: bisque;
+    background-color:'';
     height:60px ;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: rgb(49, 14, 14);
     justify-content: space-between;
-    background-color: transparent;
-    -webkit-backdrop-filter: blur(5px);
+    /* background: rgb(237,237,246);
+    background: linear-gradient(90deg, rgba(237,237,246,1) 0%, rgba(120,51,203,1) 35%, rgba(158,52,232,1) 92%, rgba(195,169,255,1) 100%);
+    -webkit-backdrop-filter: blur(5px); */
      backdrop-filter: blur(5px);
-     box-shadow: 0px 20px 15px -3px rgba(0,0,0,0.1);
+     box-shadow: 0px 8px 15px -3px rgba(0,0,0,0.1);
 }
 
-
+.menue{
+    margin-right: 30px;
+}
 .menue ul{
     display: flex;
-    color: rgb(125, 125, 125);
+    color: rgb(255, 255, 255);
     font-weight: 700;
     
     
@@ -35,11 +43,11 @@
 }
 .menue ul li::after{
     
-    color: white;
+    color: rgb(30, 227, 70);
     position: absolute;
     content: "";
     display: flex;
-    background-color: rgb(125, 61, 228);
+    background-color: rgb(101, 232, 92);
     width: 0px;
     height: 3px;
     transition:width;
@@ -48,7 +56,59 @@
     transition-duration: 0.5s;
     width: 60px;
 }
+.contact{
+    
+    border: none;
+    font-size: 21px;
+    font-weight: 800;
+    border-left: 1px solid green;
+    background-color: transparent;
+    color: rgb(49, 47, 47);
+    padding: 0px 8px;
+    height: 40px;
+    margin-top:7px;
+    transition: all;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    
+}
+.contact:hover{
+    color: rgb(34, 244, 80);
+    border-left: none;
+}
+.contact::before{
+    z-index: -4;
+    
+    width: 0px;
+    height: 40px;
+    color: rgb(0, 0, 0);
+    position: absolute;
+    top: 9px;
+    z-index: 0;
+    
+    background-color: transparent;
+    margin-left: -10px;
+    transition: all;
+    transition-duration:0.8s ;
+    content: '';
+    text-align: center;
+    font-size: 20px;
+    
+    
+}
+.contact:hover::before{
+    width: 79.6px;
+    border-right: 2px dotted rgb(27, 255, 19);
+    
+  
 
+}
+/* .contact:hover{
+    background-color: rgb(154, 154, 154);
+    color: rgb(27, 51, 203);
+   
+    margin-top: 5px;
+} */
 .sidebar {
     display: none;
     min-height:99.3vh;
@@ -93,10 +153,17 @@ flex-direction:column;
     
 }
 h3{
-    margin:15px 1px;
+    margin:15px 30px;
     font-size: 25px;
     letter-spacing: 1px;
     font-weight: 900;
+    transition: all;
+    transition-duration: 0.6s;
+    
+}
+h3:hover{
+    letter-spacing: 3px;
+
 }
 .menueButton{
     display: none;

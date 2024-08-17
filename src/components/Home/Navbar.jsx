@@ -5,9 +5,11 @@ import { RxCrossCircled } from 'react-icons/rx'
 
 const Navbar = () => {
     const [display,setDisplay]=useState(false)
+ 
     
     useEffect(()=>{console.log('moiz')},[])
   return (
+    <div style={{display:"flex",justifyContent:'center'}}>
     <div className='navbar'>
         <div className='logo'>
             <h3>M.Moiz Zakir</h3>
@@ -17,7 +19,7 @@ const Navbar = () => {
             <li >Home</li>
             <li>About</li>
             <li>Projects</li>
-            <li>Contact</li>
+            <button className='contact'>Contact</button>
         </ul>
 
         </div>
@@ -38,6 +40,7 @@ const Navbar = () => {
 
         </div>
 
+    </div>
     </div>
   )
 }
