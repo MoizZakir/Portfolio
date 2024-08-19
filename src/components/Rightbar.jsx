@@ -1,7 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import '../../Styles/navbar.css'
-import { ImMenu3, ImMenu4 } from 'react-icons/im'
-import { RxCrossCircled } from 'react-icons/rx'
+import React from 'react'
+import '../Styles/rightbar.css'
+import img from '../assets/moiz3.png'
+import { CgMail } from 'react-icons/cg'
+import { FaLinkedin, FaWhatsapp } from 'react-icons/fa'
+import { IoLogoGithub } from 'react-icons/io'
+import { CiLinkedin } from 'react-icons/ci'
+import { MdDarkMode } from "react-icons/md";
 import { FormControlLabel, styled, Switch } from '@mui/material'
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     width: 62,
@@ -50,51 +54,34 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     },
   }));
 
-const Navbar = () => {
-    const [display,setDisplay]=useState(false)
- 
-    
-    useEffect(()=>{console.log('moiz')},[])
+const Rightbar = ({mode,setMode}) => {
   return (
-    
-    <div className='navbar'>
-        <div className='logo'>
-            <h3>M.Moiz Zakir</h3>
+    <div className='container'>
+        <div className='profileimage'>
+            <img src={img} alt="" />
         </div>
-        <div className='menue'>
-        <ul>
-            <li >Home</li>
-            <li>About</li>
-            <li>Projects</li>
-            <button className='contact'>Contact</button>
-        </ul>
-
+        <div className='refs'>
+            <ul>
+                <li className='list'><CgMail  className='icons'/><span><a href="mailto:moizzakir87@example.com">  moizzakir87@gmail.com</a></span></li>
+                <li className='list'><FaWhatsapp className='icons' /><span>+923182875921</span></li>
+                <li className='list'> <a target='_blank' href="https://www.github.com/moizzakir"> <IoLogoGithub className='icons' /></a> <span> Github.com/moizzakir</span></li>
+                <li className='list'><a href="https://www.linkedin.com/in/m-moiz-zakir-6351a3241/"><FaLinkedin className='icons'  /></a> <span>https://www.linkedin.com/in/m-moiz-zakir-6351a3241/</span></li>
+                </ul>
+                
         </div>
-        
-        <div className='menueButton'>
-        <FormControlLabel
-            sx={{mb:1}}
-            onClick={()=>setMode(!mode)}
-        control={<MaterialUISwitch defaultChecked />}/>
+        <div>
             
-        {!display&&<ImMenu3 size={40} color='' onClick={()=>setDisplay(true)}/>}
-        {display&&<ImMenu4 size={40} color='' onClick={()=>setDisplay(false)}/>}
-
+        
+            <FormControlLabel
+            sx={{m:10}}
+            onClick={()=>setMode(!mode)}
+        control={<MaterialUISwitch defaultChecked />}
+        
+      />
+ 
         </div>
-        <div className='sidebar' style={{display:display?'flex':"none"}}>
-        <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Projects</li>
-            <li>Contact</li>
-        </ul>
-        <span style={{marginRight:"60px", marginTop:"12px", color:"red", fontWeight:800 ,cursor:'pointer'}} onClick={()=>setDisplay(false)}><RxCrossCircled size={30} /></span>
-
         </div>
-
-    </div>
-    
   )
 }
 
-export default Navbar
+export default Rightbar
