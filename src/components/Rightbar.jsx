@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../Styles/rightbar.css'
 import img from '../assets/moiz3.png'
 import { CgMail } from 'react-icons/cg'
+import Aos
+ from 'aos'
+import 'aos/dist/aos.css'
 import { FaLinkedin, FaWhatsapp } from 'react-icons/fa'
 import { IoLogoGithub } from 'react-icons/io'
 import { CiLinkedin } from 'react-icons/ci'
 import { MdDarkMode } from "react-icons/md";
 import { FormControlLabel, styled, Switch } from '@mui/material'
+
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     width: 62,
     height: 34,
@@ -55,9 +59,12 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   }));
 
 const Rightbar = ({mode,setMode}) => {
+  useEffect(()=>{
+    Aos.init({duration:'1000',delay:"500" })
+},[])
   return (
-    <div className='container'>
-        <div className='profileimage'>
+    <div className='container' style={{color:!mode?'white':"black", border:!mode? "1px solid white":"1px solid black"}}>
+        <div data-aos="flip-left"  className='profileimage'>
             <img src={img} alt="" />
         </div>
         <div className='refs'>
