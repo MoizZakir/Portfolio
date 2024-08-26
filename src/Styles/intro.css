@@ -35,6 +35,7 @@
 }
 .para{
     width: 50%;
+    line-height: 30px;
     
 }
 @media (max-width:950px) {

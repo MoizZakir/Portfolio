@@ -18,11 +18,11 @@ const Intro = ({ mode, setMode }) => {
       <div
         className='content'>
         <div className='greet'>
-          <h2 data-aos="zoom-out" style={{ textAlign: 'center', fontSize: '30px' }}>Welcome Here,</h2>
+          <h2 data-aos="zoom-out" style={{ color:'black', backgroundColor:'yellow', textAlign: 'center', fontSize: '30px', width:"200px", marginLeft:"15px"}}>Welcome Here,</h2>
         </div>
         <div className='introduction'>
           <div style={{ display: 'flex', fontSize: '28px', alignItems: 'center', gap: "8px", width: '100%' }}>
-            <h4 style={{}} >This is M.Moiz Zakir </h4>
+            <h4 style={{}} >This is <span style={{color:'purple'}}>M</span> .Moiz Zakir </h4>
             <TypeAnimation
               sequence={[
 
@@ -36,7 +36,7 @@ const Intro = ({ mode, setMode }) => {
                 1000,
               ]}
               speed={50}
-              style={{ fontSize: '1em', color: 'yellow', maxWidth: "max-content", }}
+              style={{ fontSize: '1em', fontWeight:'bold', color: 'yellow', maxWidth: "max-content", }}
               repeat={Infinity}
             />
           </div>
